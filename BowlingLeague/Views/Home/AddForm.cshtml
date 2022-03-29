@@ -1,0 +1,70 @@
+﻿@{
+}
+
+@model Bowler
+
+<div class="row">
+    <div class="col-1"></div>
+
+    <div class="col-11">
+        <h1>Add Bowler Here</h1>
+
+        <form method="post" asp-action="AddForm">
+
+            <input type="hidden" asp-for="BowlerId" value="@ViewBag.IDs" />
+
+            <div class="form-group">
+                <label asp-for="BowlerFirstName">First Name:</label>
+                <input class="form-control" asp-for="BowlerFirstName" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerMiddleInit">Middle Initial:</label>
+                <input class="form-control" asp-for="BowlerMiddleInit" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerLastName">Last Name:</label>
+                <input class="form-control" asp-for="BowlerLastName" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerAddress">Address:</label>
+                <input class="form-control" asp-for="BowlerAddress" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerCity">City:</label>
+                <input class="form-control" asp-for="BowlerCity" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerState">State:</label>
+                <input class="form-control" asp-for="BowlerState" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerZip">Zip:</label>
+                <input class="form-control" asp-for="BowlerZip" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BowlerPhoneNumber">Phone Number:</label>
+                <input class="form-control" asp-for="BowlerPhoneNumber" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TeamId">Team:</label>
+                <select class="form-control" asp-for="TeamId">
+                    @foreach (Team b in ViewBag.Teams)
+                    {
+                        <option value="@b.TeamId">@b.TeamName</option>
+                    }
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-lg btn-primary">Save</button>
+        </form>
+    </div>
+
+</div>

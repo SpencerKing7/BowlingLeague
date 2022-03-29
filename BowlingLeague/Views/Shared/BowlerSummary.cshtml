@@ -1,0 +1,29 @@
+﻿@{
+}
+
+@model Bowler
+
+<div class="card card-outline-primary m-2 p-1">
+    <div class="bg-info p-1 rounded">
+        <h3 class="text-white">@Model.BowlerFirstName @Model.BowlerMiddleInit @Model.BowlerLastName</h3>
+
+        <span class="badge bg-light">
+            Team: <b>@Model.Team.TeamName</b>
+        </span>
+    </div>
+    <br />
+    <ul>
+        <li>Address: @Model.BowlerAddress</li>
+        <li>City: @Model.BowlerCity</li>
+        <li>State: @Model.BowlerState</li>
+        <li>Zip: @Model.BowlerZip</li>
+        <li>Phone Number: @Model.BowlerPhoneNumber</li>
+    </ul>
+ 
+    <div class="form-row p-1">
+
+        <a class="btn btn-primary btn-sm text-white" asp-route-bowler="@Model.BowlerId" asp-controller="Home" asp-action="EditForm">Edit</a>
+        &nbsp;
+        <a class="btn btn-danger btn-sm text-white" asp-route-bowler="@Model.BowlerId" asp-controller="Home" asp-action="DeleteBowler">Delete</a>
+    </div>
+</div>

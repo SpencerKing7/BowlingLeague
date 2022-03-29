@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand" >
+                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </div>
+                <div class="navbar-brand float-end">
+                    <a class="nav-link text-white btn btn-secondary" asp-area="" asp-controller="Home" asp-action="AddForm">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row m-1 p-1">
+
+        <div class="col-10">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="col-2">
+            <p>Do you think you are good? Add yourself to the league with the link above!</p>
+            <img class="img-fluid" src="~/img/bowling.jpg" />
+        </div>
+
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

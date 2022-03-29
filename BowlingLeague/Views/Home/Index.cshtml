@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Bowler>
+
+<div class="row m-1 p-1">
+    <div id="teams" class="col-2">
+        <vc:teams></vc:teams>
+    </div>
+    <div class="col-10">
+        <h1 class="bg-secondary text-center text-white rounded-pill">Welcome to the Washington Bowling League!</h1>
+        <br />
+        @if (ViewBag.TeamTitle != null)
+        {
+            <h2 class="text-black p-2">Team: <b>@ViewBag.TeamTitle</b></h2>
+        }
+        else
+        {
+            <h2 class="text-black p-2"><b>All Bowlers</b></h2>
+        }
+
+
+        @foreach (Bowler b in Model)
+        {
+            <partial name="BowlerSummary" model="b" />
+        }
+    </div>
+</div>
